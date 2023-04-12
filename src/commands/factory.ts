@@ -1,24 +1,28 @@
-import { ICommand } from './command';
-import { Format, Options } from '../options';
-import { GetFoldersCommand, GetFilesCommand, IgnoreCommand, CsvFormatCommand, NewlineFormatCommand, JsonFormatCommand } from '.';
-import { DeduplicateCommand } from './deduplicate';
+import {ICommand} from './command'
+import {Format, Options} from '../options'
+import {
+  GetFoldersCommand,
+  GetFilesCommand,
+  IgnoreCommand,
+  CsvFormatCommand,
+  NewlineFormatCommand,
+  JsonFormatCommand
+} from '.'
+import {DeduplicateCommand} from './deduplicate'
 
 class CommandFactory {
-  constructor() {
-
-  }
+  constructor() {}
 
   make(options: Options): ICommand[] {
     const commands: ICommand[] = []
 
-    if(options.foldersOnly) {
+    if (options.foldersOnly) {
       commands.push(new GetFoldersCommand())
-    }
-    else {
+    } else {
       commands.push(new GetFilesCommand())
     }
 
-    if(options.ignore) {
+    if (options.ignore) {
       commands.push(new IgnoreCommand(options.ignore))
     }
 
@@ -30,7 +34,7 @@ class CommandFactory {
 
 class FormatFactory {
   make(format: Format) {
-    switch(format) {
+    switch (format) {
       case 'csv':
         return new CsvFormatCommand()
       case 'newline':
