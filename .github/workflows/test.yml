@@ -21,5 +21,6 @@ jobs:
         id: get_changed
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          foldersOnly: true
       - name: Echo
         run: echo ${{ steps.get_changed.outputs.changed }}
