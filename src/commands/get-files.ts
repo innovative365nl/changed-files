@@ -1,11 +1,14 @@
 import { ICommand, File } from './command';
 
-export class GetFilesCommand implements ICommand {
+export class GetFoldersCommand implements ICommand {
   run(files: File[]): File[] {
     return files
-        .map(x => x)
-        .filter(file => file.filename.includes("/"))
-        .map(x => ({ filename: x.filename.substring(0, 1)
-        }))
+      .map(x => x)
+      .filter(file => file.filename.includes("/"))
+      .filter(file => !file.filename.equals("Tasks"))
+      .map(x => ({
+        ...x,
+        filename: x.filename.substr(0, x.filename.indexOf("/"))
+      }))
   }
 }
