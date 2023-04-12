@@ -1,0 +1,71 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "OpenAPI Document on Azure Functions",
+    "description": "This is the OpenAPI Document on Azure Functions",
+    "version": "1.0.0"
+  },
+  "host": "localhost:7071",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/{id}": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "operationId": "product",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "No description"
+          }
+        }
+      }
+    },
+    "/": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "operationId": "products",
+        "responses": {
+          "200": {
+            "description": "No description"
+          }
+        }
+      }
+    },
+    "/{id}/specs": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "operationId": "productSpecs",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "No description"
+          }
+        }
+      }
+    }
+  }
+}
