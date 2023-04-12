@@ -8,7 +8,7 @@ export class GetFoldersCommand implements ICommand {
       .map(x => ({
         ...x,
         filename: x.filename.substring(
-            x.filename.split('/', 2).join('/').length)
+            x.filename.split('/', 2).join('/').length, x.filename.length)
       }))
   }
 }
