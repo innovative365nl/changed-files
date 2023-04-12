@@ -3,7 +3,7 @@ import { GetFoldersCommand } from './';
 describe('get-folders command', () => {
   it('should only return folders', () => {
     const files = [{
-      filename: "one/test.txt"
+      filename: "one/bla/test.txt"
     },
     {
       filename: "two.txt"
@@ -12,10 +12,10 @@ describe('get-folders command', () => {
       filename: "two/bla/something.ts"
     }]
     expect(new GetFoldersCommand().run(files)).toEqual([{
-      filename: "one"
+      filename: "bla"
     },
     {
-      filename: "two"
+      filename: "bla"
     }])
   })
 })
