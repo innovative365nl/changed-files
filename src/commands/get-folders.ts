@@ -6,9 +6,11 @@ export class GetFoldersCommand implements ICommand {
       .map(x => x)
       .filter(file => file.filename.includes('/'))
       .map(x => ({
+
         ...x,
         filename: x.filename.substring(
-            x.filename.split('/', 2).join('/').length, x.filename.length)
+            x.filename.indexOf('/'), x.filename.length)
       }))
   }
+
 }
