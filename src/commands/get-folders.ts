@@ -5,9 +5,7 @@ export class GetFoldersCommand implements ICommand {
     return files
       .map(x => x)
       .filter(file => file.filename.includes("/"))
-      .map(x => ({
-        ...x,
-        filename: x.filename
-      }))
-  }
+    
+    }
 }
+
