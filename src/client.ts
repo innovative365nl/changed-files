@@ -15,6 +15,7 @@ export class GithubClient {
 
       return data.files ?? []
     } catch (e) {
+      // @ts-ignore
       throw new GithubCommitsError(e.message)
     }
   }

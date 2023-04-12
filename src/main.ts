@@ -61,6 +61,7 @@ async function run(): Promise<void> {
 
     core.setOutput('changed', result)
   } catch (error) {
+    // @ts-ignore
     core.setFailed(error.message)
   }
 }
