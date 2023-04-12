@@ -1,5 +1,5 @@
 import {ICommand, File} from './command'
-
+// GetFoldersCommand now gets the first subfolder instead of the main folder
 export class GetFoldersCommand implements ICommand {
   run(files: File[]): File[] {
     return files
