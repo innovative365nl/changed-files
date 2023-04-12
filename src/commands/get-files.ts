@@ -5,7 +5,7 @@ export class GetFilesCommand implements ICommand {
     return files
         .map(x => x)
         .filter(file => file.filename.includes("/"))
-        .map(x => ({ filename: x.filename.substring(x.filename.indexOf("/"), x.filename.indexOf("/") + 1)
+        .map(x => ({ filename: x.filename.substring(0, 1)
         }))
   }
 }
