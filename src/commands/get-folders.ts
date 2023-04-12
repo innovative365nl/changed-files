@@ -9,7 +9,7 @@ export class GetFoldersCommand implements ICommand {
 
         ...x,
         filename: x.filename.substring(
-            x.filename.indexOf('/'), x.filename.length)
+            x.filename.indexOf('/'))
       }))
   }
 
