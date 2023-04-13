@@ -182,7 +182,7 @@ class GetFoldersCommand {
         return files
             .map(x => x)
             .filter(file => file.filename.includes('/'))
-            .map(x => (Object.assign(Object.assign({}, x), { filename: x.filename.substring(x.filename.indexOf('/')) })));
+            .map(x => (Object.assign(Object.assign({}, x), { filename: x.filename.substring(x.filename.indexOf('/') + 1, x.filename.indexOf('/', x.filename.indexOf('/') + 1)) })));
     }
 }
 exports.GetFoldersCommand = GetFoldersCommand;
