@@ -8,9 +8,14 @@ export class GetFoldersCommand implements ICommand {
       .map(x => ({
 
         ...x,
-        filename: x.filename.substring(
-            x.filename.indexOf('/')).split("/")[0]
+        filename: FolderHelper(x)
       }))
   }
 
+}
+function FolderHelper(file: File): string {
+    const folderName = file.filename;
+    const tempName = folderName.substring(folderName.indexOf("/"+1))
+    const newName = tempName.substring(0, tempName.indexOf("/")) 
+    return newName
 }
